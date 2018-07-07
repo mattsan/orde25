@@ -1,8 +1,37 @@
 defmodule Orde25Test do
   use ExUnit.Case
-  doctest Orde25
 
-  test "greets the world" do
-    assert Orde25.hello() == :world
-  end
+  import Orde25
+
+  test "0", do: assert(solve("4,7,(0,3)") == "(0,0),(3,0),(3,6)")
+  test "1", do: assert(solve("4,6,(3,3)") == "(2,5),(0,4),(2,0)")
+  test "2", do: assert(solve("1,1,(0,0)") == "-")
+  test "3", do: assert(solve("2,2,(0,0)") == "-")
+  test "4", do: assert(solve("2,3,(0,0)") == "-")
+  test "5", do: assert(solve("2,3,(0,1)") == "(0,0),(1,0),(1,2)")
+  test "6", do: assert(solve("2,3,(1,1)") == "(1,2),(0,2),(0,0)")
+  test "7", do: assert(solve("2,3,(1,2)") == "-")
+  test "8", do: assert(solve("3,4,(1,2)") == "-")
+  test "9", do: assert(solve("4,3,(2,2)") == "(1,2),(1,1),(3,1)")
+  test "10", do: assert(solve("7,7,(2,5)") == "(0,3),(2,1),(6,5)")
+  test "11", do: assert(solve("8,7,(1,1)") == "(3,0),(4,2),(0,4)")
+  test "12", do: assert(solve("9,7,(3,6)") == "(0,4),(2,1),(8,5)")
+  test "13", do: assert(solve("10,7,(6,6)") == "(3,6),(3,3),(9,3)")
+  test "14", do: assert(solve("10,11,(4,2)") == "(8,1),(9,5),(1,7)")
+  test "15", do: assert(solve("10,12,(0,3)") == "(3,0),(6,3),(0,9)")
+  test "16", do: assert(solve("10,13,(0,0)") == "-")
+  test "17", do: assert(solve("10,14,(4,3)") == "(8,2),(9,6),(1,8)")
+  test "18", do: assert(solve("15,15,(2,1)") == "(5,0),(6,3),(0,5)")
+  test "19", do: assert(solve("16,17,(14,13)") == "(10,16),(7,12),(15,6)")
+  test "20", do: assert(solve("19,7,(18,0)") == "-")
+  test "21", do: assert(solve("20,7,(1,4)") == "(0,1),(3,0),(5,6)")
+  test "22", do: assert(solve("25,11,(15,1)") == "(24,1),(24,10),(6,10)")
+  test "23", do: assert(solve("26,12,(12,8)") == "(4,8),(4,0),(20,0)")
+  test "24", do: assert(solve("27,13,(14,2)") == "(24,2),(24,12),(4,12)")
+  test "25", do: assert(solve("28,14,(6,6)") == "-")
+  test "26", do: assert(solve("30,30,(25,17)") == "(20,29),(8,24),(18,0)")
+  test "27", do: assert(solve("35,36,(32,3)") == "(34,8),(29,10),(25,0)")
+  test "28", do: assert(solve("150,130,(50,113)") == "(8,56),(65,14),(149,128)")
+  test "29", do: assert(solve("180,120,(120,18)") == "-")
+  test "30", do: assert(solve("200,200,(24,134)") == "(0,45),(89,21),(137,199)")
 end
