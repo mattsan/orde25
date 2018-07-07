@@ -6,7 +6,7 @@ defmodule Orde25 do
       |> Enum.map(&String.to_integer/1)
 
     sevens =
-      for dx <- -x..(width - x - 1), dy <- -y..(height - y - 1) do
+      for dx <- -width..width, dy <- -height..height do
         [
           {x, y},
           {x + dx, y - dy},
